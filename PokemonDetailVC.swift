@@ -30,13 +30,25 @@ class PokemonDetailVC: UIViewController {
     
     var pokemon: Pokemon!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewTitleLbl.text = pokemon.name.capitalized
-        pokeNameLbl.text = pokemon.name.capitalized
+        viewTitleLbl.text = self.pokemon.name.capitalized
+        
+        updateUI()
+        
     }
 
+    
+    func updateUI() {
+        
+        pokeNameLbl.text = self.pokemon.name.capitalized
+        pokeImage.image = UIImage(named: "\(self.pokemon.pokemonId)")
+        
+    }
+    
+    
     @IBAction func backBtnPressed(_ sender: UIButton) {
         
         dismiss(animated: true, completion: nil)
