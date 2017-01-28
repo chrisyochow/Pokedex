@@ -10,7 +10,23 @@ import UIKit
 
 class PokemonDetailVC: UIViewController {
     
+    @IBOutlet weak var bioAndMoveSelect: UISegmentedControl!
     @IBOutlet weak var viewTitleLbl: UILabel!
+    @IBOutlet weak var pokeImage: UIImageView!
+    @IBOutlet weak var pokeNameLbl: UILabel!
+    @IBOutlet weak var descriptionLbl: UILabel!
+    @IBOutlet weak var pokedexIdLbl: UILabel!
+    @IBOutlet weak var attackLbl: UILabel!
+    @IBOutlet weak var defenseLbl: UILabel!
+    @IBOutlet weak var typeLbl: UILabel!
+    @IBOutlet weak var heightLbl: UILabel!
+    @IBOutlet weak var weightLbl: UILabel!
+    @IBOutlet weak var evoLbl: UILabel!
+    @IBOutlet weak var evo1Image: UIImageView!
+    @IBOutlet weak var evo1ToEvo2ArrowLbl: UILabel!
+    @IBOutlet weak var evo2Image: UIImageView!
+    @IBOutlet weak var evo2ToEvo3ArrowLbl: UILabel!
+    @IBOutlet weak var evo3Image: UIImageView!
     
     var pokemon: Pokemon!
 
@@ -18,7 +34,13 @@ class PokemonDetailVC: UIViewController {
         super.viewDidLoad()
 
         viewTitleLbl.text = pokemon.name.capitalized
+        pokeNameLbl.text = pokemon.name.capitalized
     }
 
+    @IBAction func backBtnPressed(_ sender: UIButton) {
+        
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
